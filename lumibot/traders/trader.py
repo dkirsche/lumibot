@@ -117,17 +117,6 @@ class Trader:
             self._join_pool()
         result = self._collect_analysis()
 
-        if self.is_backtest_broker:
-            logging.info("Backtesting finished")
-            strat.backtest_analysis(
-                logdir=self.logdir,
-                show_plot=show_plot,
-                show_tearsheet=show_tearsheet,
-                save_tearsheet=save_tearsheet,
-                show_indicators=show_indicators,
-                tearsheet_file=tearsheet_file,
-            )
-
         return result
 
     # Async version of run_all
